@@ -16,6 +16,7 @@ http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/cu
 	
 }]]]></db:input-parameters>
 		</db:update>
+		<logger level="INFO" doc:name="Logger" doc:id="e81ed2e2-4594-40eb-8830-ea25f66095eb" message="Requested data updated successfully............#[payload]"/>
 		<ee:transform doc:name="Transform Message" doc:id="a6a08695-9ff6-4b99-8531-183a2bf372c7" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
