@@ -1,0 +1,76 @@
+#%RAML 1.0
+title: <YOUR_TITLE>
+version: v1
+baseUri: http://localhost:8082
+
+/AccountCreation:
+  post:
+    body:
+      application/json:
+        example:
+                {
+                  "name":"Sai",
+                  "mobileNo":"9000000000",
+                  "emailId":"SaiTemple@gmail.com",
+                  "gender":"Male",
+                  "doj":04-Sep-2022
+                }
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+                    {
+                      "message":"Account Created Successfully"
+                    }  
+/AccountDetails:
+  get:
+    queryParameters:
+      accountId:
+        example: "1001"
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "accountId": 1001,
+                "dateOfBirth": null,
+                "gender": null,
+                "phone": "9000000123",
+                "name": "aadi",
+                "email": "aadishakti@gmail.com"
+              }
+  
+/UpdateAccount:
+  patch:
+     body:
+      application/json:
+        example:
+          {
+            "accountId": "1001",
+            "phone": "1234567891"
+         }
+     responses:
+        200:
+          body:
+            application/json:
+              example:
+                {
+                  "message":"Phone number updated successfully"
+                }
+
+/DeleteAccount:
+  delete:
+    queryParameters:
+      accountId:
+        example: "1001"
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "message":"Account Details deleted Successfully"
+              }
+                                
